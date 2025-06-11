@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <material name="orange">
+        <color rgba="0.99 0.3 0.0 1.0"/>
+    </material>
+    <material name="yellow">
+        <color rgba="0.9 0.8 0.0 1.0"/>
+    </material>
+     <material name="grey">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+    </material>
+    <xacro:property name="base_x_y" value="0.08"/>
+    <xacro:property name="base_z" value="0.01"/>
+    <xacro:property name="first_l" value="0.06"/>
+    <xacro:property name="first_r" value="0.016"/>
+    <xacro:property name="second_l" value="0.1"/>
+    <xacro:property name="second_r" value="0.014"/>
+     <xacro:property name="third_l" value="0.09"/>
+    <xacro:property name="third_r" value="0.01"/>
+
+    <link name="arm_base_link">
+        <visual>
+            <geometry>
+                <box size="${base_x_y} ${base_x_y} ${base_z}"/>
+            </geometry>
+            <material name="orange"/>
+            <origin xyz="0.0 0.0 ${base_z/2}" rpy="0.0 0.0 0.0"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="${base_x_y} ${base_x_y} ${base_z}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 ${base_z/2}" rpy="0.0 0.0 0.0"/>
+        </collision>
+        <xacro:define_box_inertia m="0.5" x="${base_x_y}" y="${base_x_y}" z="${base_z}" o_xyz="0.0 0.0 ${base_z/2}" o_rpy="0.0 0.0 0.0"/>
+    </link>
+    <link name="arm_first_link">
+        <visual>
+            <geometry>
+                <cylinder radius="${first_r}" length="${first_l}"/>
+            </geometry>
+            <material name="yellow"/>
+            <origin xyz="0.0 0.0 ${first_l/2}" rpy="0.0 0.0 0.0"/>
+        </visual>
+        <collision>
+             <geometry>
+                <cylinder radius="${first_r}" length="${first_l}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 ${first_l/2}" rpy="0.0 0.0 0.0"/>
+        </collision>
+        <xacro:define_cylinder_inertia m="0.3" r="${first_r}" l="${first_l}" o_xyz="0.0 0.0 ${first_l/2}" o_rpy="0.0 0.0 0.0" />
+
+    </link>
+   <link name="arm_second_link">
+        <visual>
+            <geometry>
+                <cylinder radius="${second_r}" length="${second_l}"/>
+            </geometry>
+            <material name="grey"/>
+            <origin xyz="0.0 0.0 ${second_l/2.0}" rpy="0.0 0.0 0.0"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="${second_r}" length="${second_l}"/>
+            </geometry>
+            <material name="grey"/>
+            <origin xyz="0.0 0.0 ${second_l/2.0}" rpy="0.0 0.0 0.0"/>
+        </collision>
+        <xacro:define_cylinder_inertia m="0.3" r="${second_r}" l="${second_l}" o_xyz="0.0 0.0 ${second_l/2}" o_rpy="0.0 0.0 0.0" />
+    </link>
+    <link name="arm_third_link">
+        <visual>
+            <geometry>
+                 <cylinder radius="${third_r}" length="${third_l}"/>
+            </geometry>
+            <material name="orange"/>
+            <origin xyz="0.0 0.0 ${third_l/2}" rpy="0.0 0.0 0.0"/>
+        </visual>
+        <collision>
+            <geometry>
+                 <cylinder radius="${third_r}" length="${third_l}"/>
+            </geometry>
+            <material name="orange"/>
+            <origin xyz="0.0 0.0 ${third_l/2}" rpy="0.0 0.0 0.0"/>
+        </collision>
+        <xacro:define_cylinder_inertia m="0.3" r="${third_r}" l="${third_l}" o_xyz="0.0 0.0 ${third_l/2}" o_rpy="0.0 0.0 0.0" />
+    </link>
+    <joint name="robot_base_arm_base_joint" type="fixed">
+        <origin xyz="0.0 0.0 ${car_thick}" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="arm_base_link"/>
+    </joint>
+    <joint name="arm_base_first_joint" type="revolute">
+        <parent link="arm_base_link"/>
+        <child link="arm_first_link"/>
+        
+        <axis xyz="0.0 0.0 1.0"/>
+        <limit lower="${-pi}" upper="${pi}" effort="200" velocity="50"/>
+        <dynamics damping="0.3" friction="0.2"/>
+        
+        <origin xyz="0.0 0.0 ${base_z/2.0}" rpy="0.0 0.0 0.0"/>
+    </joint>
+    <joint name="first_second_joint" type="revolute">
+        <parent link="arm_first_link"/>
+        <child link="arm_second_link"/>
+        <axis xyz="0.0 1.0 0.0"/>
+        <limit lower="${-pi/2}" upper="${pi/2}" effort="300" velocity="100"/>
+        <dynamics damping="0.3" friction="0.2"/>
+        <origin xyz="0.0 0.0 ${first_l}" rpy="0.0 0.0 0.0"/>
+    </joint>
+    <joint name="second_third_joint" type="revolute">
+        <parent link="arm_second_link"/>
+        <child link="arm_third_link"/>
+        <axis xyz="0.0 1.0 0.0"/>
+        <limit lower="${-pi/2}" upper="${pi/2}" effort="300" velocity="100"/>
+        <dynamics damping="0.3" friction="0.2"/>
+        <origin xyz="0.0 0.0 ${second_l}" rpy="0.0 0.0 0.0"/>
+    </joint>
+</robot>

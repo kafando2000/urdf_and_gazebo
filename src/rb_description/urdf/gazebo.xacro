@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- for caster wheel, as it is passive joint and we set it fixed we need friction parameters-->
+    <gazebo reference="caster_wheel_link">
+        <mu1 value="0.1"/>
+        <mu2 value="0.1"/>
+
+    </gazebo>
+    <!-- this gazebo tag is for controlling the robot-->
+    <gazebo>
+        <plugin filename = "gz-sim-diff-drive-system" name = "gz::sim::systems::DiffDrive">
+            
+            <right_joint>base_wheel2_joint</right_joint>
+            <left_joint>base_wheel1_joint</left_joint>
+            <wheel_separation>0.34</wheel_separation>
+            <wheel_radius>0.1</wheel_radius>
+            <!-- odometry origin-->
+            <frame_id>odom</frame_id>
+            <!-- the point to take as the position of the robot-->
+            <child_frame_id>base_footprint</child_frame_id>
+        </plugin>
+    </gazebo>
+    <!-- this one is to publish the joint states-->
+    <gazebo>
+        <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+             <joint_name>base_wheel1_joint</joint_name>
+             <joint_name>base_wheel2_joint</joint_name>
+             <joint_name>arm_base_first_joint</joint_name>
+             <joint_name>first_second_joint</joint_name>
+             <joint_name>second_third_joint</joint_name>
+        </plugin>
+    </gazebo>
+    <gazebo>
+        <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+            <joint_name>arm_base_first_joint</joint_name>
+            <use_force_commands>True</use_force_commands>
+            <p_gain>10.0</p_gain>
+           
+        </plugin>
+    </gazebo>
+    <gazebo>
+        <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+            <joint_name>first_second_joint</joint_name>
+            <use_force_commands>True</use_force_commands>
+             <p_gain>10.0</p_gain>
+        </plugin>
+    </gazebo>
+    <gazebo>
+        <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+            <joint_name>second_third_joint</joint_name>
+            <use_force_commands>True</use_force_commands>
+            <p_gain>10.0</p_gain>
+        </plugin>
+    </gazebo>
+</robot>

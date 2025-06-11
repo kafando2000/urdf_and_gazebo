@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mobilrobot">
+    <xacro:include filename="commonproperties.urdf.xacro"/>
+    <xacro:include filename="gazebo.xacro"/>
+    <xacro:include filename="camera.xacro"/>
+    <xacro:include filename="arm.xacro"/>
+    
+    <!-- to define a variable-->
+    <link name="base_footprint"/>
+
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <!-- use the variable here-->
+                <box size="${car_length} ${car_width} ${car_thick}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 ${car_thick/2}" rpy="0.0 0.0 0.0"/>
+            <material name="wierd"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="${car_length} ${car_width} ${car_thick}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 ${car_thick/2}" rpy="0.0 0.0 0.0"/>
+        </collision>
+        <xacro:define_box_inertia m="2"  x="${car_length}" y="${car_width}" z="${car_thick}"
+        o_xyz="0.0 0.0 ${car_thick/2}" o_rpy="0.0 0.0 0.0"/>
+    </link>
+    <link name="wheel1_link">
+        <visual>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_radius/2}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 ${-wheel_radius/4}" rpy="0.0 0.0 0.0"/>
+            <material name="black"/>
+        </visual>
+         <collision>
+            <geometry>
+                <sphere radius="${wheel_radius}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 ${-wheel_radius/4}" rpy="0.0 0.0 0.0"/>
+        </collision>
+        <xacro:define_cylinder_inertia m="0.1" r="${wheel_radius}" l="${wheel_radius/2}" o_xyz="0.0 0.0 ${-wheel_radius/4}" o_rpy="0.0 0.0 0.0"/>
+    </link>
+    <link name="wheel2_link">
+        <visual>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_radius/2}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 ${wheel_radius/4}" rpy="0.0 0.0 0.0"/>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <geometry>
+                <sphere radius="${wheel_radius}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 ${wheel_radius/4}" rpy="0.0 0.0 0.0"/>
+        </collision>
+        <xacro:define_cylinder_inertia m="0.1" r="${wheel_radius}" l="${wheel_radius/2}" o_xyz="0.0 0.0 ${wheel_radius/4}" o_rpy="0.0 0.0 0.0"/>
+    </link>
+    <link name="caster_wheel_link">
+        <visual>
+            <geometry>
+                <sphere radius="${wheel_radius/2}"/> 
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <geometry>
+                <sphere radius="${wheel_radius/2}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </collision>
+        <xacro:define_sphere_inertia m="0.1" r="${wheel_radius/2}" o_xyz="0.0 0.0 0.0" o_rpy="0.0 0.0 0.0"/>
+    </link>
+    <joint name="base_joint" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="base_link"/>
+        <origin xyz="0.0 0.0 0.1" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <joint name="base_wheel1_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="wheel1_link"/>
+        <axis xyz="0.0 0.0 1.0"/>
+        <origin xyz="${car_length/2.0 - car_length/4} ${car_width/2.0} 0" rpy="${pi/2.0} 0.0 0.0 "/>
+    </joint>
+    <joint name="base_wheel2_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="wheel2_link"/>
+        <axis xyz="0.0 0.0 1.0"/>
+        <origin xyz="${car_length/2.0 - car_length/4} ${-car_width/2.0} 0" rpy="${pi/2.0} 0.0 0.0"/>
+    </joint>
+    <joint name="caster_wheel_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="caster_wheel_link"/>
+        <origin xyz="${-car_length/2.0 + car_length/10.0} 0.0  ${-wheel_radius/2.0}" rpy="0.0 ${pi/2.0} 0.0"/>
+    </joint>
+</robot>

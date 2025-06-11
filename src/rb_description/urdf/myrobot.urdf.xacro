@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot_name">
+    <!-- example of macro-->
+    <xacro:macro name="wheel_creation" params="wheel_name length width">
+        <link name="${wheel_name}">
+            <visual>
+                <geometry>
+                    <box size="${length} 0.0 ${width}"/>
+                </geometry>
+            </visual>
+        </link>
+    </xacro:macro>
+    <!-- using the macro-->
+    <xacro:wheel_creation wheel_name="Wheel12" length="0.6" width="0.3" />
+
+     
+</robot>

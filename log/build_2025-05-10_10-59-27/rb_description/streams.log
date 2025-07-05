@@ -1,6 +1,0 @@
-[0.017s] Invoking command in '/home/thomas/tfgazebourdf_ws/build/rb_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thomas/concepts_ws/install/py_actions:/home/thomas/mobilrobot_ws/install/mobilrobot_py_examples:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/thomas/tfgazebourdf_ws/build/rb_description -- -j4 -l4
-[0.054s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
-[0.312s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
-[0.431s] -- Configuring done (0.4s)
-[0.435s] -- Generating done (0.0s)
-[0.437s] -- Build files have been written to: /home/thomas/tfgazebourdf_ws/build/rb_description

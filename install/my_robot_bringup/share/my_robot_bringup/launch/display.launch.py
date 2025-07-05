@@ -1,1 +1,0 @@
-/home/thomas/tfgazebourdf_ws/src/my_robot_bringup/launch/display.launch.py

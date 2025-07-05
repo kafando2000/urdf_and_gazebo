@@ -10,8 +10,8 @@
     </node>
     <!-- launch gazebo environment-->
     <include file = "$(var gazebo_launch_path)">
-        <arg name = "gz_args" value = "$(find-pkg-share my_robot_bringup)/worlds/multip_tablew.sdf -r"/> 
-       <!--<arg name = "gz_args" value = "empty.sdf -r"/>-->
+       <arg name = "gz_args" value = "$(find-pkg-share my_robot_bringup)/worlds/multip_tablew.sdf -r"/> 
+       <!--<arg name = "gz_args" value = "empty.sdf -r"/> -->
     </include>
     <!-- subscription to the robot_state_publisher topic -->
     <node pkg="ros_gz_sim" exec="create" args="-topic robot_description"/>

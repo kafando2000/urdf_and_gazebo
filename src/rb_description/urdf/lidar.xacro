@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+    <link name="lidar_link">
+        <visual>
+            <geometry>
+            <cylinder radius="0.03" length="0.04"/>
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <material name="lidar_disk_color">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+            <cylinder radius="0.03" length="0.04"/>
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </collision>
+        <xacro:define_cylinder_inertia m="0.01" r="0.03" l="0.04" o_xyz="-0.01 0.0 0.0" o_rpy="0 0 0" />
+    </link>
+
+    <joint name="lidar_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="lidar_link"/>
+        <origin xyz="${-car_length/2.5} 0.0 ${car_thick}" rpy="0 ${pi} 0"/>
+    </joint>
+    <gazebo reference="lidar_link">
+        <sensor name="gpu_lidar" type="gpu_lidar">
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>90</samples>
+              <resolution>1</resolution>
+              <min_angle>${-pi/3}</min_angle>
+              <max_angle>${pi/3}</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>16</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.05</min_angle>
+              <max_angle>0.05</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.05</min>
+            <max>15</max>
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </lidar>
+        <topic>laser_scan</topic>
+        <visualize>true</visualize>
+        <update_rate>10</update_rate>
+      </sensor>
+    </gazebo>
+</robot>

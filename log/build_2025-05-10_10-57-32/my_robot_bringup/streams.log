@@ -1,0 +1,18 @@
+[0.024s] Invoking command in '/home/thomas/tfgazebourdf_ws/build/my_robot_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thomas/concepts_ws/install/py_actions:/home/thomas/mobilrobot_ws/install/mobilrobot_py_examples:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/thomas/tfgazebourdf_ws/src/my_robot_bringup -DCMAKE_INSTALL_PREFIX=/home/thomas/tfgazebourdf_ws/install/my_robot_bringup
+[0.216s] -- The C compiler identification is GNU 13.3.0
+[0.332s] -- The CXX compiler identification is GNU 13.3.0
+[0.359s] -- Detecting C compiler ABI info
+[0.486s] -- Detecting C compiler ABI info - done
+[0.497s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.497s] -- Detecting C compile features
+[0.499s] -- Detecting C compile features - done
+[0.513s] -- Detecting CXX compiler ABI info
+[0.644s] -- Detecting CXX compiler ABI info - done
+[0.657s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.658s] -- Detecting CXX compile features
+[0.658s] -- Detecting CXX compile features - done
+[0.680s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.860s] -- Found Python3: /home/thomas/anaconda3/bin/python3 (found version "3.12.7") found components: Interpreter 
+[1.194s] -- Configuring done (1.1s)
+[1.198s] -- Generating done (0.0s)
+[1.200s] -- Build files have been written to: /home/thomas/tfgazebourdf_ws/build/my_robot_bringup

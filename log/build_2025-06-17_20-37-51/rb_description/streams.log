@@ -1,0 +1,36 @@
+[0.021s] Invoking command in '/home/thomas/tfgazebourdf_ws/build/rb_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thomas/concepts_ws/install/py_actions:/home/thomas/mobilrobot_ws/install/mobilrobot_py_examples:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/thomas/tfgazebourdf_ws/src/rb_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/thomas/tfgazebourdf_ws/install/rb_description
+[0.049s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.432s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.603s] -- Configuring done (0.6s)
+[0.613s] -- Generating done (0.0s)
+[0.619s] -- Build files have been written to: /home/thomas/tfgazebourdf_ws/build/rb_description
+[0.625s] Invoked command in '/home/thomas/tfgazebourdf_ws/build/rb_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thomas/concepts_ws/install/py_actions:/home/thomas/mobilrobot_ws/install/mobilrobot_py_examples:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/thomas/tfgazebourdf_ws/src/rb_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/thomas/tfgazebourdf_ws/install/rb_description
+[0.626s] Invoking command in '/home/thomas/tfgazebourdf_ws/build/rb_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thomas/concepts_ws/install/py_actions:/home/thomas/mobilrobot_ws/install/mobilrobot_py_examples:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/thomas/tfgazebourdf_ws/build/rb_description -- -j4 -l4
+[0.677s] Invoked command in '/home/thomas/tfgazebourdf_ws/build/rb_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thomas/concepts_ws/install/py_actions:/home/thomas/mobilrobot_ws/install/mobilrobot_py_examples:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/thomas/tfgazebourdf_ws/build/rb_description -- -j4 -l4
+[0.693s] Invoking command in '/home/thomas/tfgazebourdf_ws/build/rb_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thomas/concepts_ws/install/py_actions:/home/thomas/mobilrobot_ws/install/mobilrobot_py_examples:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/thomas/tfgazebourdf_ws/build/rb_description
+[0.704s] -- Install configuration: ""
+[0.705s] -- Execute custom install script
+[0.706s] -- Up-to-date symlink: /home/thomas/tfgazebourdf_ws/install/rb_description/share/rb_description//urdf/arm.xacro
+[0.706s] -- Up-to-date symlink: /home/thomas/tfgazebourdf_ws/install/rb_description/share/rb_description//urdf/camera.xacro
+[0.706s] -- Up-to-date symlink: /home/thomas/tfgazebourdf_ws/install/rb_description/share/rb_description//urdf/commonproperties.urdf.xacro
+[0.706s] -- Up-to-date symlink: /home/thomas/tfgazebourdf_ws/install/rb_description/share/rb_description//urdf/gazebo.xacro
+[0.707s] -- Up-to-date symlink: /home/thomas/tfgazebourdf_ws/install/rb_description/share/rb_description//urdf/lidar.xacro
+[0.707s] -- Up-to-date symlink: /home/thomas/tfgazebourdf_ws/install/rb_description/share/rb_description//urdf/mobilrobot.urdf.xacro
+[0.708s] -- Up-to-date symlink: /home/thomas/tfgazebourdf_ws/install/rb_description/share/rb_description//urdf/myrobot.urdf.xacro
+[0.708s] -- Up-to-date symlink: /home/thomas/tfgazebourdf_ws/install/rb_description/share/rb_description//rviz/rviz_config.rviz
+[0.708s] -- Up-to-date symlink: /home/thomas/tfgazebourdf_ws/install/rb_description/share/ament_index/resource_index/package_run_dependencies/rb_description
+[0.709s] -- Up-to-date symlink: /home/thomas/tfgazebourdf_ws/install/rb_description/share/ament_index/resource_index/parent_prefix_path/rb_description
+[0.709s] -- Up-to-date symlink: /home/thomas/tfgazebourdf_ws/install/rb_description/share/rb_description/environment/ament_prefix_path.sh
+[0.710s] -- Up-to-date symlink: /home/thomas/tfgazebourdf_ws/install/rb_description/share/rb_description/environment/ament_prefix_path.dsv
+[0.710s] -- Up-to-date symlink: /home/thomas/tfgazebourdf_ws/install/rb_description/share/rb_description/environment/path.sh
+[0.711s] -- Up-to-date symlink: /home/thomas/tfgazebourdf_ws/install/rb_description/share/rb_description/environment/path.dsv
+[0.711s] -- Up-to-date symlink: /home/thomas/tfgazebourdf_ws/install/rb_description/share/rb_description/local_setup.bash
+[0.712s] -- Up-to-date symlink: /home/thomas/tfgazebourdf_ws/install/rb_description/share/rb_description/local_setup.sh
+[0.712s] -- Up-to-date symlink: /home/thomas/tfgazebourdf_ws/install/rb_description/share/rb_description/local_setup.zsh
+[0.714s] -- Up-to-date symlink: /home/thomas/tfgazebourdf_ws/install/rb_description/share/rb_description/local_setup.dsv
+[0.714s] -- Symlinking: /home/thomas/tfgazebourdf_ws/install/rb_description/share/rb_description/package.dsv
+[0.726s] -- Up-to-date symlink: /home/thomas/tfgazebourdf_ws/install/rb_description/share/ament_index/resource_index/packages/rb_description
+[0.726s] -- Up-to-date symlink: /home/thomas/tfgazebourdf_ws/install/rb_description/share/rb_description/cmake/rb_descriptionConfig.cmake
+[0.727s] -- Up-to-date symlink: /home/thomas/tfgazebourdf_ws/install/rb_description/share/rb_description/cmake/rb_descriptionConfig-version.cmake
+[0.727s] -- Up-to-date symlink: /home/thomas/tfgazebourdf_ws/install/rb_description/share/rb_description/package.xml
+[0.730s] Invoked command in '/home/thomas/tfgazebourdf_ws/build/rb_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thomas/concepts_ws/install/py_actions:/home/thomas/mobilrobot_ws/install/mobilrobot_py_examples:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/thomas/tfgazebourdf_ws/build/rb_description

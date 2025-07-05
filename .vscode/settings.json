@@ -1,0 +1,18 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/thomas/concepts_ws/install/py_actions/lib/python3.12/site-packages",
+        "/home/thomas/concepts_ws/install/myconcepts_interfaces/lib/python3.12/site-packages",
+        "/home/thomas/mobilrobot_ws/install/mobilrobot_py_examples/lib/python3.12/site-packages",
+        "/home/thomas/mobilrobot_ws/install/mobil_robot_interfaces/lib/python3.12/site-packages",
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/thomas/concepts_ws/install/py_actions/lib/python3.12/site-packages",
+        "/home/thomas/concepts_ws/install/myconcepts_interfaces/lib/python3.12/site-packages",
+        "/home/thomas/mobilrobot_ws/install/mobilrobot_py_examples/lib/python3.12/site-packages",
+        "/home/thomas/mobilrobot_ws/install/mobil_robot_interfaces/lib/python3.12/site-packages",
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ],
+    "cmake.sourceDirectory": "/home/thomas/tfgazebourdf_ws/src/my_robot_bringup",
+    "ros.distro": "jazzy"
+}

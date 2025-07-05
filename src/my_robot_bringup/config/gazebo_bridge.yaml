@@ -24,18 +24,21 @@
   gz_type_name: "gz.msgs.Twist"
   direction: ROS_TO_GZ
 
+# camera_info topic and message types bridging ros2 and gazebo
 - ros_topic_name: "/camera/camera_info"
   gz_topic_name: "/camera/camera_info"
   ros_type_name: "sensor_msgs/msg/CameraInfo"
   gz_type_name: "gz.msgs.CameraInfo"
   direction: GZ_TO_ROS
 
+# camera topic and message types bridging ros2 and gazebo
 - ros_topic_name: "/camera/image_raw"
   gz_topic_name: "/camera/image_raw"
   ros_type_name: "sensor_msgs/msg/Image"
   gz_type_name: "gz.msgs.Image"
   direction: GZ_TO_ROS
 
+# joint cmd_pos topic and message types bridging ros2 and gazebo
 - ros_topic_name: "/joint1/cmd_pos"
   gz_topic_name: "/model/mobilrobot/joint/arm_base_first_joint/0/cmd_pos"
   ros_type_name: "std_msgs/msg/Float64"
@@ -53,3 +56,10 @@
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
+
+# lidar_sensor topic and message types bridging ros2 and gazebo
+- ros_topic_name: "/scan"
+  gz_topic_name: "/laser_scan"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: GZ_TO_ROS

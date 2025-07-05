@@ -4,6 +4,7 @@
     <xacro:include filename="gazebo.xacro"/>
     <xacro:include filename="camera.xacro"/>
     <xacro:include filename="arm.xacro"/>
+    <xacro:include filename="lidar.xacro" />
     
     <!-- to define a variable-->
     <link name="base_footprint"/>

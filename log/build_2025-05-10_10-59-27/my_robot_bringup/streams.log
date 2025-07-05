@@ -1,0 +1,11 @@
+[0.021s] Invoking command in '/home/thomas/tfgazebourdf_ws/build/my_robot_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thomas/concepts_ws/install/py_actions:/home/thomas/mobilrobot_ws/install/mobilrobot_py_examples:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/thomas/tfgazebourdf_ws/build/my_robot_bringup -- -j4 -l4
+[0.076s] Invoked command in '/home/thomas/tfgazebourdf_ws/build/my_robot_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thomas/concepts_ws/install/py_actions:/home/thomas/mobilrobot_ws/install/mobilrobot_py_examples:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/thomas/tfgazebourdf_ws/build/my_robot_bringup -- -j4 -l4
+[0.090s] Invoking command in '/home/thomas/tfgazebourdf_ws/build/my_robot_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thomas/concepts_ws/install/py_actions:/home/thomas/mobilrobot_ws/install/mobilrobot_py_examples:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/thomas/tfgazebourdf_ws/build/my_robot_bringup
+[0.100s] -- Install configuration: ""
+[0.100s] -- Installing: /share/my_robot_bringup/launch
+[0.100s] [31mCMake Error at cmake_install.cmake:54 (file):
+[0.101s]   file INSTALL cannot make directory "/share/my_robot_bringup/launch": No
+[0.101s]   such file or directory.
+[0.101s] 
+[0.101s] [0m
+[0.103s] Invoked command in '/home/thomas/tfgazebourdf_ws/build/my_robot_bringup' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/thomas/concepts_ws/install/py_actions:/home/thomas/mobilrobot_ws/install/mobilrobot_py_examples:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/thomas/tfgazebourdf_ws/build/my_robot_bringup

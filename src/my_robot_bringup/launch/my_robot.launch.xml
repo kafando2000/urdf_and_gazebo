@@ -6,10 +6,6 @@
         value = "$(find-pkg-share rb_description)/urdf/mobilrobot.urdf.xacro"/>
      <let name = "rviz_config" 
         value = "$(find-pkg-share rb_description)/rviz/rviz_config.rviz"/>
-    <let name="gazebo_launch_path" 
-        value = "$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py"/>
-    <let name="ros_gz_bridge_config_path" 
-        value = "$(find-pkg-share my_robot_bringup)/config/gazebo_bridge.yaml"/>
      <let name="controllers_config_path" 
         value = "$(find-pkg-share my_robot_bringup)/config/my_robot_controllers.yaml"/>
 
@@ -24,13 +20,9 @@
 
     <!-- spawn the node to be managed by the controller_manager-->
 
-    <node pkg="controller_manager" exec="spawner">
-        <arg value="joint_state_broadcaster"/>
-    </node>
-    <node pkg="controller_manager" exec="spawner">
-        <arg value="diff_drive_controller"/>
-    </node>
+    <node pkg="controller_manager" exec="spawner" args="joint_state_broadcaster" />
+    <node pkg="controller_manager" exec="spawner" args="diff_drive_controller" />
     <!-- rviz2 launch-->
-    <node pkg = "rviz2" exec = "rviz2" output = "screen" args="-d $(var rviz_config)"></node>
+    <node pkg = "rviz2" exec = "rviz2" output = "screen" args="-d $(var rviz_config)" />
 
 </launch>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mobilrobot">
     <xacro:include filename="commonproperties.urdf.xacro"/>
-    <!-- <xacro:include filename="gazebo.xacro"/> -->
-    <!-- <xacro:include filename="camera.xacro"/> -->
+    <xacro:include filename="gazebo.xacro"/>
+    <xacro:include filename="camera.xacro"/>
     <xacro:include filename="arm.xacro"/>
-    <!-- <xacro:include filename="lidar.xacro" /> -->
+    <xacro:include filename="lidar.xacro" /> 
     <xacro:include filename="mobilrobot_ros2_control.xacro"/>
     
     <!-- to define a variable-->

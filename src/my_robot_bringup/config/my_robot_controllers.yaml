@@ -12,10 +12,10 @@ controller_manager:
 
     # this is the controller that will publish the state of the robot
     joint_state_broadcaster:
-      type: joint_state_broadcaster/JointStateBroadcaster
+      type: "joint_state_broadcaster/JointStateBroadcaster"
     # this is the controller that will control the robot
     diff_drive_controller:
-      type: diff_drive_controller/DiffDriveController
+      type: "diff_drive_controller/DiffDriveController"
       
 diff_drive_controller:
   ros_parameters:
@@ -28,7 +28,7 @@ diff_drive_controller:
     cmd_vel_timeout: 0.5 # seconds
     publish_rate: 50.0 # Hz
     enable_odom_tf: true
-
+    
     odom_frame_id: "odom"
     base_frame_id: "base_footprint"
 

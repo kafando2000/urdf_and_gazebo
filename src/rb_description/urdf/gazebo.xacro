@@ -30,7 +30,7 @@
              <joint_name>second_third_joint</joint_name>
         </plugin>
     </gazebo>
-
+    <!-- for the arm-->
     <gazebo>
         <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
             <joint_name>arm_base_first_joint</joint_name>

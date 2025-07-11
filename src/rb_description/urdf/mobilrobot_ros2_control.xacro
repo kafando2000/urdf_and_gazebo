@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+    <ros2_control name="MobilRobtInterface" type="system">
+        <hardware >
+            <plugin>mock_components/GenericSystem</plugin>
+            <param name="calculate_dynamics">True</param>
+            <param name="update_rate">100</param>
+           
+        </hardware>
+        <joint name="base_wheel1_joint">
+            <!-- command to give for controlling the robot-->
+            <command_interface type="velocity"></command_interface>
+            <!-- state or measure to receive in control loop: sensors data-->
+            <state_interface type="velocity"></state_interface>
+            <state_interface type="position"></state_interface>
+        </joint>
+        <joint name="base_wheel2_joint">
+            <command_interface type="velocity"></command_interface>
+            <!-- state or measure to receive in control loop: sensors data-->
+            <state_interface type="positon"></state_interface>
+            <state_interface type="velocity"></state_interface>
+        </joint>
+
+    </ros2_control>
+</robot>

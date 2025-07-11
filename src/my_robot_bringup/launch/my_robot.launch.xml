@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<launch>
+
+     <let name = "urdf_path" 
+        value = "$(find-pkg-share rb_description)/urdf/mobilrobot.urdf.xacro"/>
+     <let name = "rviz_config" 
+        value = "$(find-pkg-share rb_description)/rviz/rviz_config.rviz"/>
+    <let name="gazebo_launch_path" 
+        value = "$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py"/>
+    <let name="ros_gz_bridge_config_path" 
+        value = "$(find-pkg-share my_robot_bringup)/config/gazebo_bridge.yaml"/>
+     <let name="controllers_config_path" 
+        value = "$(find-pkg-share my_robot_bringup)/config/my_robot_controllers.yaml"/>
+
+    <!-- launch the robot_state_publisher node -->
+    <node pkg = "robot_state_publisher" exec = "robot_state_publisher">
+        <param name="robot_description" value="$(command 'xacro $(var urdf_path)')"/>
+    </node>
+    <!-- controller manager-->
+    <node pkg="controller_manager" exec="ros2_control_node">
+        <param from="$(command 'xacro $(var controllers_config_path)')"/>
+    </node>
+
+    <!-- spawn the node to be managed by the controller_manager-->
+
+    <node pkg="controller_manager" exec="spawner">
+        <arg value="joint_state_broadcaster"/>
+    </node>
+    <node pkg="controller_manager" exec="spawner">
+        <arg value="diff_drive_controller"/>
+    </node>
+    <!-- rviz2 launch-->
+    <node pkg = "rviz2" exec = "rviz2" output = "screen" args="-d $(var rviz_config)"></node>
+
+</launch>

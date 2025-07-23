@@ -2,30 +2,27 @@
 # and the robot_state_publisher will publish the state of the robot
 # to the tf2 system
 controller_manager:
-  ros_parameters:
+  ros__parameters:
     update_rate: 100 # Hz
-    use_sim_time: true
-    
     
     # give a name to conrollers and give it a type
     # and give it parameters
 
     # this is the controller that will publish the state of the robot
     joint_state_broadcaster:
-      type: "joint_state_broadcaster/JointStateBroadcaster"
+      type: joint_state_broadcaster/JointStateBroadcaster
     # this is the controller that will control the robot
     diff_drive_controller:
-      type: "diff_drive_controller/DiffDriveController"
+      type: diff_drive_controller/DiffDriveController
       
 diff_drive_controller:
-  ros_parameters:
-    left_wheel: ["left_wheel2_joint"]
-    right_wheel: ["left_wheel1_joint"]
+  ros__parameters:
+    left_wheel_names: ["base_wheel2_joint"]
+    right_wheel_names: ["base_wheel1_joint"]
 
     wheel_separation: 0.34 # meters
     wheel_radius: 0.1 # meters
 
-    cmd_vel_timeout: 0.5 # seconds
     publish_rate: 50.0 # Hz
     enable_odom_tf: true
     

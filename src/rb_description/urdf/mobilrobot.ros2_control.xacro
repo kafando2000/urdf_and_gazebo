@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
     <ros2_control name="MobilRobtInterface" type="system">
-        <hardware >
+        <hardware>
             <plugin>mock_components/GenericSystem</plugin>
-            <param name="calculate_dynamics">True</param>
+            <param name="calculate_dynamics">true</param>
         </hardware>
         <joint name="base_wheel1_joint">
             <!-- command to give for controlling the robot-->
             <command_interface name="velocity"/>
-            <!-- state or measure to receive in control loop: sensors data-->
+            <!-- state or measure to receive in control loop sensors data-->
             <state_interface name="velocity"/>
             <state_interface name="position"/>
         </joint>
         <joint name="base_wheel2_joint">
             <command_interface name="velocity"/>
-            <!-- state or measure to receive in control loop: sensors data-->
+            <!-- state or measure to receive in control loop sensors data-->
             <state_interface name="velocity"/>
-            <state_interface name="positon"/>
+            <state_interface name="position"/>
         </joint>
     </ros2_control>
 </robot>
